@@ -1,0 +1,34 @@
+<h2>Create new reminder</h2>
+
+<div class="well">
+<%= form_for(@reminder) do |r| %>
+
+	<p>
+	<%= r.label :title, "Title: " %>
+	<%= r.text_field :title %>
+	</p>
+
+	<p>
+	<%= r.label :description, "Description: " %>
+	<%= r.text_area :description %>
+	</p>
+	
+	<p>
+	<%= r.label :due_date, "Deadline: " %>
+	<%= r.text_field :due_date %>
+	</p>
+
+	<p>
+		<%= r.label :priority, "Choose the priority" %>
+		<p><%= r.select :priority, [["Low",1], ["Medium", 2], ["High", 3]] %></p>
+	</p>
+
+	<p>
+		<%= r.label :finished, "Finished this task already?" %>
+		<p><%= r.check_box :finished %></p>
+	</p>
+
+	<%= r.submit %>
+
+<% end %>
+</div>
